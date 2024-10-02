@@ -45,7 +45,7 @@ class QueueImpl(Queue):
         self.size = 0
 
     def enqueue(self, element):
-        if self.size == self.capacity:
+        if self.is_full():
             raise Exception(f"[ENQUEUE] queue is full")
         self.queue.append(element)
         self.size += 1
